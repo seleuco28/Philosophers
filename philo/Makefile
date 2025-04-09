@@ -6,7 +6,7 @@
 #    By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/16 18:42:08 by alvelazq          #+#    #+#              #
-#    Updated: 2023/09/16 19:08:05 by alvelazq         ###   ########.fr        #
+#    Updated: 2023/09/17 21:01:49 by alvelazq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ RM = rm -rf
 
 HEADER = philo.h
 
-SRC_SOURCES = main.c utils.c
+SRC_SOURCES = main.c utils.c threads.c
 SRC_DIR		= src/
 SRC					= $(addprefix $(SRC_DIR), $(SRC_SOURCES))
 SRC_OBJ				= $(SRC:.c=.o)

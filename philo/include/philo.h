@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 18:41:56 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/09/17 13:41:11 by alvelazq         ###   ########.fr       */
+/*   Updated: 2024/01/26 13:38:00 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,29 @@
 # include <fcntl.h>
 # include <stdlib.h>
 # include <string.h>
-# include <pthread.h>
-
+# include <pthread.h> //libreria especifica para hilos
+# include <sys/time.h>
 struct s_data;
 
-typedef struct s_philo
+typedef struct s_philo //data de cada filosofo en particular
 {
 	struct s_data *data; //PERMITE QUE CADA FILOSOFO ACCEDA A DATOS COMPARTIDOS
+	pthread_t philo_thread;
 	int id;
+	int eating;
+	int thinking;
+	int sleeping;
+	int alive;
 } t_philo;
 
-typedef struct s_data
+typedef struct s_data //data del programa en general
 {
     int	philo_num;
-	int time_to_die;
-	int time_to_eat;
-	int	time_to_sleep;
+	u_int64_t time_to_die;
+	u_int64_t time_to_eat;
+	u_int64_t time_to_sleep;
 	int number_of_meals;
+	u_int64_t start_time;
 	t_philo *philos;
 } t_data;
 
@@ -44,7 +50,11 @@ typedef struct s_data
 
 /////////////////////// FUNCIOENS UTILES ///////////////
 int	ft_error_msg(char *message);
-int ft_arg_checker(char **av);
 int	ft_atoi(const char *str);
+
+void ft_arg_num_checker(char **av);
+void ft_arg_count_checker(int ac);
+
+void pruebas_printar_fecha(t_data *data);
 
 #endif
