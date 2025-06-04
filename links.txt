@@ -1,0 +1,3 @@
+https://github.com/TommyJD93/Philosophers
+https://github.com/raccoman/philosophers/tree/main/philo
+https://github.com/kichkiro/philosophers_tester

@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/16 18:42:08 by alvelazq          #+#    #+#              #
-#    Updated: 2023/09/17 21:01:49 by alvelazq         ###   ########.fr        #
+#    Created: 2025/05/08 17:34:16 by alvelazq          #+#    #+#              #
+#    Updated: 2025/05/08 17:41:34 by alvelazq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ RM = rm -rf
 
 HEADER = philo.h
 
-SRC_SOURCES = main.c utils.c threads.c
+SRC_SOURCES = main.c utils.c
 SRC_DIR		= src/
 SRC					= $(addprefix $(SRC_DIR), $(SRC_SOURCES))
 SRC_OBJ				= $(SRC:.c=.o)

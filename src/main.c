@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/16 18:43:51 by alvelazq          #+#    #+#             */
-/*   Updated: 2024/01/26 13:09:54 by alvelazq         ###   ########.fr       */
+/*   Created: 2025/05/08 17:38:58 by alvelazq          #+#    #+#             */
+/*   Updated: 2025/05/08 17:40:51 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void ft_data_initializer(t_data *data, char **av)
 {
 	data->philo_num = ft_atoi(av[1]);
-	if (data->philo_num < 1 || data->philo_num > 200) //checkear lo de +200 el tutorial dice que no puede haber mas, el subject no lo dice
+	if (data->philo_num < 1 || data->philo_num > 2147483647)
 		ft_error_msg("Invalid number of philosophers\n");
 	data->time_to_die = ft_atoi(av[2]); //los errores están controlados si pongo negativo
 	if (data->time_to_die == 0)
@@ -29,7 +29,7 @@ void ft_data_initializer(t_data *data, char **av)
 	if (av[5])
 		data->number_of_meals = ft_atoi(av[5]);
 	else
-		data->number_of_meals = -1;// controlar este fallo
+		data->number_of_meals = -1;// controlar este fallo = NULL?
 }
 
 void ft_philo_initializer(t_data *data) //falta ponerlo en el main
